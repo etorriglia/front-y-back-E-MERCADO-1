@@ -1,0 +1,527 @@
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: "Raleway", serif !important;
+}
+
+.jumbotron .display-4 {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-color: #53c0fb;
+  background-image: url("../img/cover_back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .jumbotron {
+    background-image: none; 
+    height: auto; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .jumbotron {
+    background-image: none; 
+    height: auto; 
+  }
+}
+
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead {
+  font-size: 38px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.site-header a {
+  color: white;
+  transition: ease-in-out color 0.15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+.dropzone {
+  border: 2px dashed #0087f7;
+  border-radius: 5px;
+  background: white;
+}
+
+.img-fit {
+  max-height: 100%;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
+
+main {
+  min-height: calc(100vh - 210px);
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Nombre, descripción, precio */
+.product-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-description {
+  color: #555;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+/* Estilo para la cantidad de vendidos */
+.product-soldCount {
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 0.75%;
+}
+
+.page-name {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+/* Estilos de la barra de búsqueda */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 2.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.clear-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+  display: none;
+}
+
+.clear-icon:hover {
+  color: #333;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.checked-star {
+  color: gold;
+}
+
+.not-checked-star {
+  color: lightgray;
+}
+
+.btn-text {
+  font-size: 1rem;
+  border: none;
+  background: none;
+  color: blue;
+  text-decoration: underline;
+}
+
+.star {
+  font-size: 30px;
+  color: gray;
+  cursor: pointer;
+}
+
+.star.selected {
+  color: gold;
+}
+
+/* PRODUCTOS RELACIONADOS */
+.productosrel {
+  font-family: Raleway;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-related:hover {
+  background-color: rgb(255, 196, 0); 
+  color: black;
+  border-color: rgb(255, 196, 0); 
+}
+
+.card-body-related {
+  align-content: center;
+}
+
+.card-img-top-related {
+  max-width: 70%; 
+  height: auto; 
+  margin: 0 auto; 
+  border-radius: 30px;
+}
+
+.card-title-related {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-related, .btn-img-profile, .btn-toggle {
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-radius: 100px;
+  border-color: black;
+  padding: 5px 15px; 
+}
+
+@media (max-width: 576px) {
+  .carousel-item .col-12 {
+    flex: 0 0 100%; 
+    max-width: 100%; 
+  }
+}
+
+/* Controlar layout en pantallas grandes para 2 productos por fila */
+.carousel-item .col-md-6,
+.carousel-item .col-lg-6 {
+  flex: 1 0 45%; 
+}
+
+.text-related {
+  font-family: Raleway;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.title-bold {
+  font-weight: bold;
+}
+
+/* Estilos my profile */
+.circle-img-container {
+  aspect-ratio: 1 / 1; 
+  border-radius: 50%; 
+  overflow: hidden;
+}
+
+.circle-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* estilos modo claro/oscuro*/
+
+body.day-mode, 
+body.day-mode .card, 
+body.day-mode .card-body,
+.modal-body.day-mode, .modal-header.day-mode, .modal-footer.day-mode{
+    background-color: white;
+    color: black;
+}
+
+body.night-mode,
+body.night-mode .card, 
+body.night-mode .card-body, 
+.modal-body.night-mode, .modal-header.night-mode, .modal-footer.night-mode{
+    background-color: #1e1e1e !important;
+    color: #868484;
+}
+
+
+.navbar.night-mode {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  background-color: #464646 !important;
+}
+
+.navbar.day-mode {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  background-color: #000000 !important;
+}
+
+.jumbotron.night-mode {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-image: url("../img/cover_back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+  filter: invert(1) brightness(2);
+}
+
+@media (max-width: 768px) {
+  .jumbotron.night-mode {
+    background-image: none;
+    height: auto; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .jumbotron.night-mode {
+    background-image: none; 
+    height: auto; 
+  }
+}
+
+.circle-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.switch {
+  position: relative;
+  display: inline-flex; 
+  width: 60px;
+  height: 30px;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+@media (max-width: 576px) {
+  .switch {
+    position: absolute; 
+    right: 10%; 
+    bottom: -15px; 
+  }
+
+  .toggle-container {
+    position: relative; 
+    overflow: visible; 
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 15px;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  align-items: center;
+}
+.slider svg {
+  transition: opacity 0.3s;
+}
+
+.icon-sun {
+  opacity: 1;
+}
+
+.icon-moon {
+  opacity: 0;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:checked + .slider .icon-sun {
+  opacity: 0;
+}
+
+input:checked + .slider .icon-moon {
+  opacity: 1;
+  color: white;
+}
+
+/* Estilo del toast */
+#liveToast {
+  background-color: #d4edda;
+}
+
+.btn-group > .btn-check:checked + .btn.zIndex-reset, .btn-group > .btn-check:hover + .btn.zIndex-reset {
+  z-index: unset;
+}
+
+.btninfoc {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}

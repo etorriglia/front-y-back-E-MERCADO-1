@@ -1,0 +1,120 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Raleway ;
+}
+
+.centered-items-vertically {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex; 
+    align-items: center;
+}
+
+.box-container {
+    width: 100%;
+}
+
+.logo-ecommerce {
+    width: 50%;
+}
+
+.form-col-fixed {
+    width: 500px;
+}
+
+.form {
+    border: 0px solid white;
+    border-radius: 45px;
+    padding: 2em 2.5em;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.889);
+
+}
+
+.centered-text {
+    text-align: center;
+}
+
+h1 {
+    font-weight: revert-layer;
+    font-size: revert-layer;
+}
+
+.profile-icon {
+    width: 20%;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: block;
+    margin: 1em auto 0 auto;
+}
+
+.login-label {
+    font-weight: bold;
+}
+
+.login-input {
+    border-radius: 25px;
+    border-width: 1px;
+    padding: 0.7em;
+    width: 100%;
+    margin-top: 0.1em;
+    font-size: revert-layer;
+}
+
+#togglePassword {
+    margin: revert-layer;
+}
+
+.btn-submit {
+    border-radius: 25px;
+    border-width: 1px;
+    font-size: 1.05rem;
+    padding: 0.5em;
+    width: 50%;
+    font-weight: bold;
+    background-color: white;
+    border-color: white;
+    display: block;
+    margin: 1.2em auto 0 auto;
+    
+}
+
+.btn-submit:hover {
+    background-color: #ffffffe1;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+.link-pass {
+    margin-top: 0;
+    color: #add8e6;
+}
+
+.link-pass:hover {
+    color: rgb(255, 191, 0);
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .form-col-fixed {
+        width: 600px;
+    }
+
+    .logo-ecommerce {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .form-col-fixed {
+        width: 400px;
+    }
+    .form {
+        padding: 1.2em 1.2em;
+    }
+}
+
+
