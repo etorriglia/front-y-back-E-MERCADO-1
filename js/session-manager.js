@@ -1,4 +1,3 @@
-
 // Obtener cookie dado el nombre
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -9,14 +8,14 @@ function getCookie(name) {
 
 // Redireccionar al Login en caso de que no esté autenticado
 function redirectToLogin(sessionUser) {
-    if (!sessionUser) {
+    if (!sessionUser && !localStorage.getItem("access-token")) {
         window.location.replace("login.html");
     }
 }
 
 // Redireccionar al Home en caso de que esté autenticado
 function redirectToHome(sessionUser) {
-    if (sessionUser) {
+    if (sessionUser && localStorage.getItem("access-token")) {
         // Redirigir al usuario automáticamente si ya tiene una sesión activa
         window.location.replace("index.html");
     }
@@ -55,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (logoutButton) {
         logoutButton.addEventListener('click', function(event) {
             event.preventDefault();
+            localStorage.removeItem("access-token");
             document.cookie = "sessionUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             window.location.replace("login.html");
         });
