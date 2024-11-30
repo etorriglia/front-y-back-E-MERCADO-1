@@ -120,17 +120,16 @@ btnAddToCart.addEventListener('click', () => {
 
 // Fetch and show product info
 function showData() {
-  getJSONData(
-    `https://japceibal.github.io/emercado-api/products/${productID}.json`
-  ).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      productInfo = resultObj.data;
-      showCategory(productInfo.category);
-      showProductInfo(productInfo);
-      showRelatedProducts(productInfo);
-      goToRelated(productInfo);
-    }
-  });
+  getJSONData(PRODUCT_INFO_URL + productID)
+    .then(function (resultObj) {
+      if (resultObj.status === "ok") {
+        productInfo = resultObj.data;
+        showCategory(productInfo.category);
+        showProductInfo(productInfo);
+        showRelatedProducts(productInfo);
+        goToRelated(productInfo);
+      }
+    });
 }
 
 
@@ -141,7 +140,7 @@ showData();
 
 
 // URL de comentarios para cada producto
-const PRODUCT_COMMENTS_URL = PRODUCT_INFO_COMMENTS_URL + productID + EXT_TYPE;
+const PRODUCT_COMMENTS_URL = PRODUCT_INFO_COMMENTS_URL + productID;
 
 // Fetch para la seccion de los comentarios
 getJSONData(PRODUCT_COMMENTS_URL).then(function (resultObj) {

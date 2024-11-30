@@ -4,8 +4,7 @@ let searchQuery = "";
 let minCost = 0;
 let maxCost = Number.MAX_SAFE_INTEGER;
 
-const PRODUCT_DATA_URL =
-  `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+const PRODUCT_DATA_URL = PRODUCTS_URL + catID;
 
 const productContainer = document.getElementById("card-container"); // "Traemos" utilizando el DOM el div de class "card-container" para colocar la información en él
 

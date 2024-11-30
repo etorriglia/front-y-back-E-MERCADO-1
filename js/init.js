@@ -1,6 +1,6 @@
 const CATEGORIES_URL = "http://localhost:3307/cats"; 
 const PUBLISH_PRODUCT_URL = "http://localhost:3307/sell";  
-const PRODUCTS_URL = "http://localhost:3307/cats_products/";  
+const PRODUCTS_URL = "http://localhost:3307/cats/cats_products/";  
 const PRODUCT_INFO_URL = "http://localhost:3307/products/";  
 const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3307/products_comments/"; 
 const CART_INFO_URL = "http://localhost:3307/user_cart/";  

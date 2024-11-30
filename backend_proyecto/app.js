@@ -65,7 +65,7 @@ app.get("/cats/:id", (req, res) => {
 
 /** /json/cats_products */
 
-app.get("./cats/cats_products/:catid", (req, res) => {
+app.get("/cats/cats_products/:catid", (req, res) => {
   let catID = req.params.catid;
   let catProducts = require(`./json/cats_products/${catID}.json`);
   res.send(catProducts);
@@ -79,6 +79,14 @@ app.get("/products/:id", (req, res) => {
   res.send(productInfo);
 });
 
+/** /json/products_comments */
+
+app.get("/products_comments/:id", (req, res) => {
+  let productID = req.params.id;
+  let productComments = require(`./json/products_comments/${productID}.json`);
+  res.send(productComments);
+});
+
 /** /json/sell */
 
 let sell = require("./json/sell/publish.json");
@@ -86,13 +94,13 @@ let sell = require("./json/sell/publish.json");
 
 const { message } = require("statuses");
 
-app.get("./sell", (req, res) => {
+app.get("/sell", (req, res) => {
   res.json(sell);
 });
 
 // endpoint para enviar la información del carrito a la BD al finalizar la compra
 
-app.post("./cart", async (req, res) => {
+app.post("/cart", async (req, res) => {
   let conn;
   try {
     conn = await pool.getConnection();
