@@ -20,23 +20,14 @@ app.use(cors());
 //Login
 const JWT_SECRET = "CLAVE_ULTRA_SECRETA";
 
-//credenciales
-const USER = {
-  username: "grupo1",
-  password: "jap12345",
-};
-
-app.use(express.json());
-
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  if (username === USER.username && password === USER.password) {
-    const token = jwt.sign({ username: USER.username }, JWT_SECRET);
-
-    res.json({ token });
+  if (username != '' && password != '') {
+    const token = jwt.sign({ username }, JWT_SECRET);
+    res.status(200).json({ token });
   } else {
-    res.status(401).json({ message: "Credenciales inválidas" });
+    res.status(401).json({ message: "Los campos no pueden estar vacíos." });
   }
 });
 
