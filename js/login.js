@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function createUserObject(input1, input2) {
-    let username = userInput.value.trim();
-    let password = passwordInput.value.trim()
+    let username = input1.value.trim();
+    let password = input2.value.trim()
     return {
         username: username,
         password: password
