@@ -17,11 +17,11 @@ let hideSpinner = function () {
 
 let getJSONData = function (url) {
   let result = {};
-  const token = localStorage.getItem("token"); 
+  const token = localStorage.getItem("access-token"); 
   
   const headers = {
     "Content-Type": "application/json",
-    "Authorization": `Bearer ${token}` 
+    "access-token": token,
   };
 
   showSpinner();

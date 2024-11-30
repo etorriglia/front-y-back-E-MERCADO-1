@@ -448,6 +448,7 @@ function sendOrderToServer() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      "access-token": `${localStorage.getItem("access-token")}`,
     },
     body: JSON.stringify(productsOrder),
   })

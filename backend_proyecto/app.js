@@ -33,7 +33,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-
+// Middleware
 const authorizeJWT = (req, res, next) => {
   const token = req.headers['access-token'];
 
@@ -49,15 +49,11 @@ const authorizeJWT = (req, res, next) => {
 
 let buyMessage = require("./json/cart/buy.json");
 
-
-
 app.get("/cart/buy.json", (req, res) => {
   res.send(buyMessage);
 });
 
 /** /json/cats */
-
-let categories = {};
 
 app.get("/cats", authorizeJWT, (req, res) => {
   let cats = require("./json/cats/cat.json");
@@ -113,7 +109,7 @@ app.get("/sell", authorizeJWT, (req, res) => {
 
 // endpoint para enviar la información del carrito a la BD al finalizar la compra
 
-app.post("/cart", async (req, res) => {
+app.post("/cart", authorizeJWT, async (req, res) => {
   let conn;
   try {
     conn = await pool.getConnection();
