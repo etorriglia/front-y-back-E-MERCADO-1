@@ -120,7 +120,14 @@ btnAddToCart.addEventListener('click', () => {
 
 // Fetch and show product info
 function showData() {
-  getJSONData(PRODUCT_INFO_URL + productID)
+  const token = localStorage.getItem("token"); // Obtener el token almacenado
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${token}` // Incluir el token en los encabezados
+  };
+
+  getJSONData(PRODUCT_INFO_URL + productID, headers)
     .then(function (resultObj) {
       if (resultObj.status === "ok") {
         productInfo = resultObj.data;

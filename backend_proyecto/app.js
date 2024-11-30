@@ -33,6 +33,18 @@ app.post("/login", (req, res) => {
   }
 });
 
+
+const authorizeJWT = (req, res, next) => {
+  const token = req.headers['access-token'];
+
+  if (!token) {
+    return res.status(401).json({ message: "Token requerido" });
+  }
+
+  next();
+};
+
+
 /** /json/cart */
 
 let buyMessage = require("./json/cart/buy.json");
@@ -45,27 +57,28 @@ app.get("/cart/buy.json", (req, res) => {
 
 /** /json/cats */
 
-let cats = require("./json/cats/cat.json");
 let categories = {};
 
-app.get("/cats", (req, res) => {
+app.get("/cats", authorizeJWT, (req, res) => {
+  let cats = require("./json/cats/cat.json");
   res.json(cats);
 });
 
-app.get("/cats/:id", (req, res) => {
+app.get("/cats/:id", authorizeJWT, (req, res) => {
+  let categories = {};
+  let cats = require("./json/cats/cat.json");
   for (let i = 0; i < cats.length; i++) {
-    console.log(cats[i].id);
     if (cats[i].id == req.params.id) {
       categories = cats[i];
     }
   }
   res.send(categories);
-  categories = {};
+  categories = {}; 
 });
 
 /** /json/cats_products */
 
-app.get("/cats/cats_products/:catid", (req, res) => {
+app.get("/cats/cats_products/:catid", authorizeJWT, (req, res) => {
   let catID = req.params.catid;
   let catProducts = require(`./json/cats_products/${catID}.json`);
   res.send(catProducts);
@@ -73,7 +86,7 @@ app.get("/cats/cats_products/:catid", (req, res) => {
 
 /** /json/products */
 
-app.get("/products/:id", (req, res) => {
+app.get("/products/:id", authorizeJWT, (req, res) => {
   let productID = req.params.id;
   let productInfo = require(`./json/products/${productID}.json`);
   res.send(productInfo);
@@ -81,7 +94,7 @@ app.get("/products/:id", (req, res) => {
 
 /** /json/products_comments */
 
-app.get("/products_comments/:id", (req, res) => {
+app.get("/products_comments/:id", authorizeJWT, (req, res) => {
   let productID = req.params.id;
   let productComments = require(`./json/products_comments/${productID}.json`);
   res.send(productComments);
@@ -94,7 +107,7 @@ let sell = require("./json/sell/publish.json");
 
 const { message } = require("statuses");
 
-app.get("/sell", (req, res) => {
+app.get("/sell", authorizeJWT, (req, res) => {
   res.json(sell);
 });
 

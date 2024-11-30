@@ -208,14 +208,22 @@ function setAddToCartEvent(product) {
 
 
 // Fetch and show product data
-getJSONData(PRODUCT_DATA_URL).then(function (resultObj) {
-  if (resultObj.status === "ok") {
-    productData = resultObj.data;
-    showCategory(productData.catName);
-    showProductData(productData.products);
-  }
-});
+let getProductData = function() {
+  const token = localStorage.getItem("token"); // Obtener el token almacenado
 
+  const headers = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${token}` // Incluir el token en los encabezados
+  };
+  
+  getJSONData(PRODUCT_DATA_URL, headers).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      productData = resultObj.data;
+      showCategory(productData.catName);
+      showProductData(productData.products);
+    }
+  });
+};
 
 //BOTON FILTRAR POR PRECIO CON FUNCIONALIDAD
 document.getElementById("Filtrarprecio").addEventListener("click", function () {
