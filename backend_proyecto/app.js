@@ -17,6 +17,8 @@ const port = 3307;
 app.use(express.json());
 app.use(cors());
 
+
+
 //Login
 const JWT_SECRET = "CLAVE_ULTRA_SECRETA";
 
@@ -34,6 +36,8 @@ app.post("/login", (req, res) => {
 /** /json/cart */
 
 let buyMessage = require("./json/cart/buy.json");
+
+
 
 app.get("/cart/buy.json", (req, res) => {
   res.send(buyMessage);
@@ -61,7 +65,7 @@ app.get("/cats/:id", (req, res) => {
 
 /** /json/cats_products */
 
-app.get("/cats_products/:catid", (req, res) => {
+app.get("./cats/cats_products/:catid", (req, res) => {
   let catID = req.params.catid;
   let catProducts = require(`./json/cats_products/${catID}.json`);
   res.send(catProducts);
@@ -78,15 +82,17 @@ app.get("/products/:id", (req, res) => {
 /** /json/sell */
 
 let sell = require("./json/sell/publish.json");
+
+
 const { message } = require("statuses");
 
-app.get("/sell", (req, res) => {
+app.get("./sell", (req, res) => {
   res.json(sell);
 });
 
-// endoint para enviar la información del carrito a la BD al finalizar la compra
+// endpoint para enviar la información del carrito a la BD al finalizar la compra
 
-app.post("/cart", async (req, res) => {
+app.post("./cart", async (req, res) => {
   let conn;
   try {
     conn = await pool.getConnection();
